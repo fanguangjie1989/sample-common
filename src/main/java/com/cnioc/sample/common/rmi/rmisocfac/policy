@@ -1,0 +1,9 @@
+/*
+ * Only grant permissions to the local class path (the current directory).
+ * This permission grants the ability to both accept connections from and make connections to any host on unprivileged ports (that is ports >= 1024)
+ */
+grant codeBase "file:." {
+
+    permission java.net.SocketPermission "*:1024-", "connect,accept";
+
+};
