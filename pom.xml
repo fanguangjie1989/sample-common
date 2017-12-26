@@ -16,6 +16,13 @@
 			<artifactId>xstream</artifactId>
 			<version>1.4.10</version>
 		</dependency>
+		<!-- cglib support begin -->
+		<dependency>
+			<groupId>cglib</groupId>
+			<artifactId>cglib</artifactId>
+			<version>3.2.5</version>
+		</dependency>
+		<!-- cglib support end -->
 	</dependencies>
 	<build>
 		<plugins>
