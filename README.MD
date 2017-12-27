@@ -149,5 +149,37 @@ JVM
 	  Extension ClassLoader <JAVA_HOME>/lib/ext
 	  Application ClassLoader 
 	 -XX:+TraceClassLoading
-		
+	 
+	 运行时帧结构
+	 
+	 一个方法的开始到结束执行对应着一个帧入栈出栈的过程
+	 
+	 
+	  
+	 动态分派:根据实际类型来确定方法执行版本分派过程
+	 
+	 JVM如何根据实际类型确定执行的版本?
+	 
+	 invokevirtual指令的多态查找过程
+	 
+	 1.找到操作数栈顶的第一个元素所指向的对象的实际类型，记作C 
+	 2.如果在类型C中找到了与常量中描述符和简单名称都相等的方法则执行访问权限校验如果通过则返回这个方法的直接引用，查找结束
+	 如果不通过则返回java.lang.IllegalAccessError 
+	 3.否则，按照继承关系从下向上一次对C的各个父类进行第二部的搜索过程 
+	 4.如果最后还没找到直接抛出java.lang.AbstractMethodError
+	 
+	 
+	 静态分派（方法重载本质）
+	 
+	 静态分派发生在编译期间，编译器根据参数的静态类型来确定方法重载的版本确定的版本不唯一时取最合适的版本
+	 
+	 重载方法匹配优先级 
+	 
+	 1、char->int->long->float->double
+	 2、装箱后 Character 遵循继承优先级越往上优先级越
+	 
+	 
+	 
+	 
+	 	
 	
